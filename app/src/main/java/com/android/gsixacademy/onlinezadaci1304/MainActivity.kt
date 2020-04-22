@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     var listActivities: ArrayList<String> =
         arrayListOf("RelativeLayoutActivity", "CalculatorActivity", "TodoListActivity")
 
-
+    // Alek!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
