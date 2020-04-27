@@ -5,20 +5,25 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_todo_list.*
+import kotlinx.android.synthetic.main.recyclerview_list_item.*
 
 class MainActivity : AppCompatActivity() {
 
 
     var listActivities: ArrayList<String> =
-        arrayListOf("RelativeLayoutActivity", "CalculatorActivity", "TodoListActivity")
+        arrayListOf("RelativeLayoutActivity", "CalculatorActivity", "TodoListActivity", "RecycleViewActivity", "LoginActivity")
 
-    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+          Picasso.get().load("https://www.lambonb.com/static/dealer-12703/images/huracan-evo-spyder-main-image.jpg").fit().into(image_view_background);
+
+
 
         var activitiesAdapter =
             ArrayAdapter(this, android.R.layout.simple_list_item_1, listActivities)
@@ -36,7 +41,8 @@ class MainActivity : AppCompatActivity() {
                 "RelativeLayoutActivity" -> startActivity(Intent(applicationContext, RelativeLayoutActivity::class.java))
                 "CalculatorActivity" -> startActivity(Intent(applicationContext, CalculatorActivity::class.java))
                 "TodoListActivity" -> startActivity(Intent(applicationContext, TodoListActivity::class.java))
-
+                "RecycleViewActivity" -> startActivity(Intent(applicationContext, RecycleViewActivity::class.java))
+                "LoginActivity" -> startActivity(Intent(applicationContext, UserSignedInActivity::class.java))
             }
 
             Toast.makeText(applicationContext, className, Toast.LENGTH_LONG).show()
