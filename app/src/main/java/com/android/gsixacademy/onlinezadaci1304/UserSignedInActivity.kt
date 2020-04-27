@@ -12,10 +12,11 @@ class UserSignedInActivity : AppCompatActivity() {
         setContentView(R.layout.activity_user_sign_in)
 
 
-        var mySharedPreferences = getSharedPreferences("KotlinBasicTutorialPreferences", Context.MODE_PRIVATE)
+        var mySharedPreferences =
+            getSharedPreferences("KotlinBasicTutorialPreferences", Context.MODE_PRIVATE)
 
 
-        var username = mySharedPreferences!!.getString("userName","/")
+        var username = mySharedPreferences!!.getString("userName", "/")
 
         text_view_title.text = "Signed in user is $username"
 
@@ -23,7 +24,7 @@ class UserSignedInActivity : AppCompatActivity() {
         button_log_out.setOnClickListener {
             mySharedPreferences.edit().remove("userName")
             onBackPressed()
+        }
 
-
+        }
     }
-}
