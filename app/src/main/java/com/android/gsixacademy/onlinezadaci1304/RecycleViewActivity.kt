@@ -1,6 +1,7 @@
 package com.android.gsixacademy.onlinezadaci1304
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_recyclerview.*
 
@@ -27,8 +28,12 @@ class RecycleViewActivity : AppCompatActivity() {
             listCars.add(Car("lamborghini_huracan", "lamborghini_huracan Description $number", R.drawable.lamborghini_huracan))
         }
 
-
-        var carsAdapter: CarsAdapter = CarsAdapter(listCars)
+        var carsAdapter: CarsAdapter = CarsAdapter(listCars) {
+            if(it is CarsAdapterClickEvent.CarsAdapterItemClicked){
+                var carClicked = it.car
+                Toast.makeText(applicationContext,"${carClicked.title}", Toast.LENGTH_LONG).show()
+            }
+        }
         recyclerview_activity.adapter = carsAdapter
     }
 

@@ -22,7 +22,7 @@ class UserSignedInActivity : AppCompatActivity() {
 
 
         button_log_out.setOnClickListener {
-            mySharedPreferences.edit().remove("userName")
+            mySharedPreferences.edit().clear().apply()
             onBackPressed()
         }
 

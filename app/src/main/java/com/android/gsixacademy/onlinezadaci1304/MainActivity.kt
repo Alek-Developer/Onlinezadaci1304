@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-          Picasso.get().load("https://www.lambonb.com/static/dealer-12703/images/huracan-evo-spyder-main-image.jpg").fit().into(image_view_background);
+          Picasso.get().load("https://www.ecopetit.cat/wpic/mpic/234-2340282_black-sports-ca-lamborghini-huracan-wallpaper-lamborghini-wallpaper.jpg").fit().into(image_view_background);
 
 
 
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 "CalculatorActivity" -> startActivity(Intent(applicationContext, CalculatorActivity::class.java))
                 "TodoListActivity" -> startActivity(Intent(applicationContext, TodoListActivity::class.java))
                 "RecycleViewActivity" -> startActivity(Intent(applicationContext, RecycleViewActivity::class.java))
-                "LoginActivity" -> startActivity(Intent(applicationContext, UserSignedInActivity::class.java))
+                "LoginActivity" -> startActivity(Intent(applicationContext, LoginActivity::class.java))
             }
 
             Toast.makeText(applicationContext, className, Toast.LENGTH_LONG).show()

@@ -16,16 +16,18 @@ class LoginActivity : AppCompatActivity() {
 
         if(mySharedPreferences?.contains("userName")!!){
             startActivity(Intent(applicationContext,UserSignedInActivity::class.java))
+            finish()
         }
         btn_Sign_In.setOnClickListener {
             var userName = et_Login.text.toString()
             var password = et_Password.text.toString()
 
-            mySharedPreferences.edit().putString("userName",userName)
-            mySharedPreferences.edit().putString("password", password)
-            mySharedPreferences.edit().apply()
+            mySharedPreferences.edit().putString("userName",userName).apply()
+            mySharedPreferences.edit().putString("password", password).apply()
+
 
             startActivity(Intent(applicationContext,UserSignedInActivity::class.java))
+            finish()
         }
     }
 }
