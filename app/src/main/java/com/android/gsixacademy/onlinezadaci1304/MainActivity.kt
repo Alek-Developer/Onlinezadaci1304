@@ -5,16 +5,15 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.android.gsixacademy.onlinezadaci1304.movies.PopularMoviesActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.recyclerview_list_item.*
 
 class MainActivity : AppCompatActivity() {
 
-
     var listActivities: ArrayList<String> =
-        arrayListOf("RelativeLayoutActivity", "CalculatorActivity", "TodoListActivity", "RecycleViewActivity", "LoginActivity")
-
+        arrayListOf("RelativeLayoutActivity", "CalculatorActivity", "TodoListActivity", "RecycleViewActivity", "LoginActivity", "CarActivity", "PopularMoviesActivity" )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
 
           Picasso.get().load("https://www.ecopetit.cat/wpic/mpic/234-2340282_black-sports-ca-lamborghini-huracan-wallpaper-lamborghini-wallpaper.jpg").fit().into(image_view_background);
-
 
 
         var activitiesAdapter =
@@ -43,6 +41,8 @@ class MainActivity : AppCompatActivity() {
                 "TodoListActivity" -> startActivity(Intent(applicationContext, TodoListActivity::class.java))
                 "RecycleViewActivity" -> startActivity(Intent(applicationContext, RecycleViewActivity::class.java))
                 "LoginActivity" -> startActivity(Intent(applicationContext, LoginActivity::class.java))
+                "CarActivity"  -> startActivity(Intent(applicationContext, CarActivity::class.java))
+                "PopularMoviesActivity" -> startActivity(Intent(applicationContext, PopularMoviesActivity::class.java))
             }
 
             Toast.makeText(applicationContext, className, Toast.LENGTH_LONG).show()
