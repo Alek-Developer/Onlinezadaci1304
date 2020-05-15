@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.gsixacademy.onlinezadaci1304.movies.PopularMoviesActivity
 import com.android.gsixacademy.onlinezadaci1304.people.PopularPeopleActivity
+import com.android.gsixacademy.onlinezadaci1304.search.SearchMoviesActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.recyclerview_list_item.*
@@ -14,7 +15,7 @@ import kotlinx.android.synthetic.main.recyclerview_list_item.*
 class MainActivity : AppCompatActivity() {
 
     var listActivities: ArrayList<String> =
-        arrayListOf("RelativeLayoutActivity", "CalculatorActivity", "TodoListActivity", "RecycleViewActivity", "LoginActivity", "CarActivity", "PopularMoviesActivity", "PopularPeopleActivity")
+        arrayListOf("RelativeLayoutActivity", "CalculatorActivity", "TodoListActivity", "RecycleViewActivity", "LoginActivity", "CarActivity", "PopularMoviesActivity", "PopularPeopleActivity", "SearchMoviesActivity")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                 "CarActivity"  -> startActivity(Intent(applicationContext, CarActivity::class.java))
                 "PopularMoviesActivity" -> startActivity(Intent(applicationContext, PopularMoviesActivity::class.java))
                 "PopularPeopleActivity" -> startActivity(Intent(applicationContext, PopularPeopleActivity::class.java))
+                "SearchMoviesActivity" -> startActivity(Intent(applicationContext, SearchMoviesActivity::class.java))
             }
 
             Toast.makeText(applicationContext, className, Toast.LENGTH_LONG).show()

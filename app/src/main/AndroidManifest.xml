@@ -28,6 +28,7 @@
         <activity android:name=".RelativeLayoutActivity" />
         <activity android:name=".CalculatorActivity" />
         <activity android:name=".people.PopularPeopleActivity" />
+        <activity android:name=".search.SearchMoviesActivity" />
     </application>
 
 </manifest>

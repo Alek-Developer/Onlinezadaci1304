@@ -30,7 +30,7 @@ class PeopleAdapter(
     }
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bindData(itemModel: PersonResult, position: Int) {
-            Picasso.get().load("https://image.tmdb.org/t/p/w500/${itemModel.profile_path}").fit().fit().into(itemView.image_view_profile)
+            Picasso.get().load("https://image.tmdb.org/t/p/w500/${itemModel.profile_path}").centerCrop().fit().into(itemView.image_view_profile)
             itemView.text_view_name.text = itemModel.name
             itemView.text_view_popularity.text = itemModel.popularity
         }
