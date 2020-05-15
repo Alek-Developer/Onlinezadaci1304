@@ -12,7 +12,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PopularMoviesActivity: AppCompatActivity() {
+class PopularMoviesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,34 +21,29 @@ class PopularMoviesActivity: AppCompatActivity() {
         val request = ServiceBuilder.buildService(TheMovieDbApi::class.java)
 
         val call = request.getPopularMovies("8dd3a40cdacd660d79bce7c46bad942e")
-        Log.d("moviesList","{?.size}")
+        Log.d("moviesList", "{?.size}")
 
         call.enqueue(object : Callback<PopularMovies> {
             override fun onResponse(call: Call<PopularMovies>, response: Response<PopularMovies>) {
-                if (response.isSuccessful){
+                if (response.isSuccessful) {
 
                     val popularMovies = response.body()
 
                     val moviesList = popularMovies?.results
 
-                    Log.d("moviesList","${moviesList?.size}")
+                    Log.d("moviesList", "${moviesList?.size}")
                     // do something with response
 
-
-                    if(moviesList!=null) {
-                        var moviesAdapter = MoviesAdapter(moviesList){}
+                    if (moviesList != null) {
+                        var moviesAdapter = MoviesAdapter(moviesList) {}
                         recycler_view_movies.adapter = moviesAdapter
                     }
-
                 }
             }
+
             override fun onFailure(call: Call<PopularMovies>, t: Throwable) {
                 // show the error
             }
         })
-
-
-
-
     }
 }

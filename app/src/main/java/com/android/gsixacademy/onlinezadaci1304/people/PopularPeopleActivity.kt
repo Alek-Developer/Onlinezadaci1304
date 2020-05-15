@@ -9,6 +9,7 @@ import com.android.gsixacademy.onlinezadaci1304.api.TheMovieDbApi
 import com.android.gsixacademy.onlinezadaci1304.models.PopularMovies
 import com.android.gsixacademy.onlinezadaci1304.models.PopularPeople
 import kotlinx.android.synthetic.main.activity_movies.*
+import kotlinx.android.synthetic.main.activity_recyclerview.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,6 +39,8 @@ class PopularPeopleActivity: AppCompatActivity() {
 
                     if(popularPeopleList!=null) {
 
+                        var peopleAdapter = PeopleAdapter(popularPeopleList){}
+                        recyclerview_activity.adapter = peopleAdapter
                     }
 
                 }
@@ -46,8 +49,6 @@ class PopularPeopleActivity: AppCompatActivity() {
                 // show the error
             }
         })
-
-
 
 
     }
